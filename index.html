@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+
+			<meta charset="utf-8">
+			<title></title>
+		</head>
+		<body>
+			<h1>Bookcase</h1>
+			<form id="addBook" action="">
+				<input id="inputTitle" type="text" placeholder="New book">
+				<input id="inputIsbn" type="text" placeholder="ISBN">
+				<input id="inputAuthor" type="text" placeholder="Author">
+				<input id="inputGenre" type="text" placeholder="Genre">
+				<input type="submit" value="Add book">
+			</form>
+			<!-- <ul id="shelf1" class="connectedSortable"> -->
+						<div class="books"></div>
+				<!-- </ul> -->
+      		
+      		<script id="shelfTemplate" type="text/template">
+      			<ul id=<%= title %> class="connectedSortable"></ul>
+      		</script>
+
+			<script id="bookTemplate" type="text/template">
+				<span><%= title %> (<%= isbn %>) - <%= author %> - <%= genre %></span> <button class="edit"> Edit</button> <button class="delete">Delete</button>
+			</script>
+
+
+			<script src="js/underscore.js"></script>
+			<script src="js/jquery-3.1.0.min.js"></script>
+			<script src="js/backbone.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+			<!-- <script src="js/models/Book_Models.js"></script> -->
+			<script src="js/views/Book_View.js"></script>
+			<script src="js/collections/Book_Collection.js"></script>
+			<script type="text/javascript">
+			    $( function() {
+			      $( "#shelf1, #shelf2, #shelf3, #shelf4" ).sortable({
+			        connectWith: ".connectedSortable"
+			      }).disableSelection();
+			    } );
+			</script>
+			<style>
+		      .connectedSortable {
+		        border: 1px solid #eee;
+		        width: auto;
+		        min-height: 20px;
+		        list-style-type: none;
+		        margin: 0;
+		        padding: 5px 0 0 0;
+		        float: left;
+		        margin-right: 10px;
+		      }
+		      .connectedSortable li {
+		        margin: 0 5px 5px 5px;
+		        padding: 5px;
+		        font-size: 0.95em;
+		        width: auto;
+		      }
+		      .ui-state-default{
+		        border: 1px solid #c5c5c5;
+		        background: #f6f6f6;
+		        font-weight: bold;
+		        color: #454545;
+		      }
+		      .ui-state-default div {
+		          font-weight: normal;
+		      }
+		    </style>
+		</body>
+	</html>
