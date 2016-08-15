@@ -26,9 +26,9 @@
 		model: App.Models.Book
 	});
 
-	App.Collections.Shelves = Backbone.Collection.extend({
-		model: App.Models.Shelf
-	});
+	// App.Collections.Shelves = Backbone.Collection.extend({
+	// 	model: App.Models.Shelf
+	// });
 
 	// App.View.Shelves = Backbone.View.extend({
 	// 	initialize: function(){
@@ -59,9 +59,10 @@
 
 		render: function(){
 			// filter through all books in a collection
-			var template = this.template( this.model.toJSON() );
-			this.$el.html(template);
+			// var template = this.template( this.model.toJSON() );
+			// this.$el.html(template);
 			this.collection.each(this.addOne, this);
+			
 			
 			return this;
 		},
@@ -140,50 +141,50 @@
 		}
 	});
 
-	shelvesCollection = new App.Collections.Shelves([
-			{
-				title: "shelf 1",
-				id: "s1",
-				books: [
-					{	
-						title: "Secrets of the JavaScript Ninja",
-						isbn: "193398869X",
-						author: "John Resig",
-						genre: "Technology"
-					},
-					{
-						title: "Ender's Game (The Ender Quintet)",
-						isbn: "0812550706",
-						author: "Orson Scott Card",
-						genre: "Sci Fi"
-					},
-					{
-						title: "I, Robot",
-						isbn: "055338256X",
-						author: "Isaac Asimov",
-						genre: "Sci Fi"
-					}
-				]
-			},
-			{
-				title: "shelf 2",
-				id: "s2",
-				books: [
-					{
-	                    title: "JavaScript Patterns",
-	                    isbn: "0596806752",
-	                    author: "Stoyan Stefanov",
-	                    genre: "Technology"
-	                },
-	                {
-	                    title: "Abraham Lincoln",
-	                    isbn: "0195374525",
-	                    author: "James M. McPherson",
-	                    genre: "Biography"
-	                }
-				]
-			}
-		]);
+	// shelvesCollection = new App.Collections.Shelves([
+	// 		{
+	// 			title: "shelf 1",
+	// 			id: "s1",
+	// 			books: [
+	// 				{	
+	// 					title: "Secrets of the JavaScript Ninja",
+	// 					isbn: "193398869X",
+	// 					author: "John Resig",
+	// 					genre: "Technology"
+	// 				},
+	// 				{
+	// 					title: "Ender's Game (The Ender Quintet)",
+	// 					isbn: "0812550706",
+	// 					author: "Orson Scott Card",
+	// 					genre: "Sci Fi"
+	// 				},
+	// 				{
+	// 					title: "I, Robot",
+	// 					isbn: "055338256X",
+	// 					author: "Isaac Asimov",
+	// 					genre: "Sci Fi"
+	// 				}
+	// 			]
+	// 		},
+	// 		{
+	// 			title: "shelf 2",
+	// 			id: "s2",
+	// 			books: [
+	// 				{
+	//                     title: "JavaScript Patterns",
+	//                     isbn: "0596806752",
+	//                     author: "Stoyan Stefanov",
+	//                     genre: "Technology"
+	//                 },
+	//                 {
+	//                     title: "Abraham Lincoln",
+	//                     isbn: "0195374525",
+	//                     author: "James M. McPherson",
+	//                     genre: "Biography"
+	//                 }
+	// 			]
+	// 		}
+	// 	]);
 
 
 	booksCollection = new App.Collections.Books([
